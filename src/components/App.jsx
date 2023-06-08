@@ -60,7 +60,6 @@ export function App() {
     <div className="container">
       <h1>PhoneBook</h1>
       <ContactForm handleSubmit={handleSubmit} />
-
       <h2>Contacts</h2>
       <SearchBox value={filter} onChange={changeFilter} />
       <Contacts contacts={getfilteredContacts()} deleteContact={delContact} />
