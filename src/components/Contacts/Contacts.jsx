@@ -8,12 +8,12 @@ export default function Contacts({ contacts, deleteContact }) {
   }
   return (
     <ul className={css.list}>
-      {contacts.map(contact => {
+      {contacts.map(({ number, name, id }) => {
         return (
-          <li className={css.contact} key={contact.number}>
-            <span className={css.name}>{contact.name}</span>
-            <span>{contact.number}</span>
-            <DeleteButton deleteContact={deleteContact} id={contact.id} />
+          <li className={css.contact} key={number}>
+            <span className={css.name}>{name}</span>
+            <span>{number}</span>
+            <DeleteButton deleteContact={deleteContact} id={id} />
           </li>
         );
       })}
@@ -25,7 +25,7 @@ Contacts.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.exact({
       name: PropTypes.string,
-      number: PropTypes.number,
+      number: PropTypes.string,
       id: PropTypes.string,
     })
   ).isRequired,
