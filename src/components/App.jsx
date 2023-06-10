@@ -26,6 +26,12 @@ export function App() {
         );
         return;
       }
+      if (contacts[i].name === data.name) {
+        alert(
+          `${data.name} is already in your contacts with number:  ${contacts[i].number}`
+        );
+        return;
+      }
     }
 
     setContacts(prevState => [...prevState, data]);
